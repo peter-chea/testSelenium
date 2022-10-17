@@ -1,0 +1,3 @@
+nose
+mock
+selenium~=4.1.0
