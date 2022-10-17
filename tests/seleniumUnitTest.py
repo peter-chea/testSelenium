@@ -12,7 +12,7 @@ class SearchText(unittest.TestCase):
         inst.options.add_argument('--ignore-certificate-errors')
         inst.options.add_argument('-timeout=5000')
         inst.driver = webdriver.Remote(
-            command_executor='http://localhost:4444/wd/hub',
+            command_executor='http://172.18.0.3:4444/wd/hub',
             options=inst.options
         )
         inst.driver.maximize_window()
@@ -32,7 +32,7 @@ class SearchText(unittest.TestCase):
         if pageTitle == "Example Domain":
             print("Page Title Passed")
 
-
+        assert(pageTitle == "Example Domain")
     @classmethod
     def tearDownClass(inst):
         # close the browser window
